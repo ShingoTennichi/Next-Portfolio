@@ -1,91 +1,59 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import About from "./components/about";
+import Contact from "./components/contact";
+import Projects from "./components/projects";
+import Skills from "./components/skills";
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main className=" min-h-screen p-8 ">
+      <div className="lg:grid lg:grid-rows-1 lg:grid-cols-2 max-w-[1200px] m-auto">
+        <div className="max-w-2xl">
+        <section className="sticky top-[20vh] pl-12 pr-10 ">
+          <h2 className="text-lg md:text-2xl">Web Developer</h2>
+          <h2 className=" text-lg md:text-2xl">Software Developer</h2>
+          <h1 className=" text-3xl md:text-5xl pt-3 pb-7">Shingo Tennichi</h1>
+          <div className=" overflow-hidden rounded-full h-[60px] w-[60px] relative m-auto">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
+              className="absolute top-[-35px]"
+              alt="Profile Picture"
+              src="/profile_picture.svg"
+              height={100}
               width={100}
-              height={24}
-              priority
+              quality={75}
             />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
+          </div>
+          <p className=" text-sm md:text-lg py-7 text-center">
+            Hi! I am currently learning about Computer Science at Douglas
+            College in Vancouver
           </p>
-        </a>
+        </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        </div>
+        <div>
+          <section className="pb-4">
+            <h3 className=" mb-4 tracking-[4px]">PROJECTS</h3>
+            <Projects />
+          </section>
+          <section className="pb-4">
+            <h3 className=" mb-4 tracking-[4px]">ABOUT</h3>
+            <About />
+          </section>
+          <section className="pb-4">
+            <h3 className=" mb-4 tracking-[4px]">EXPERIENCED IN</h3>
+            <Skills />
+          </section>
+          <section className="pb-4">
+            <h3 className=" mb-4 tracking-[4px]">CONTACT</h3>
+            <p className="text-center text-xs md:text-base">Thank You for Visiting My Website</p>
+            <p className="text-center">Feel Free to Contact Me</p>
+            <Contact />
+          </section>
+        </div>
       </div>
     </main>
-  )
+  );
 }

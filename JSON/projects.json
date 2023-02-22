@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Build Skill",
+    "technologies": ["TypeScript", "Something"],
+    "description": "Learning contents",
+    "url": "https://github.com/ShingoTennichi/Build-Skills"
+  },
+  {
+    "title": "Prisma-CockroachDB",
+    "technologies": ["TypeScript", "Next.js13", "Prisma", "CockroachDB"],
+    "description": "connect to DB",
+    "url": "https://prisma-cockroach-db.vercel.app/"
+  }
+]

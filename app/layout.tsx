@@ -1,4 +1,6 @@
 import './globals.css'
+import { Inter } from '@next/font/google';
+const inter = Inter();
 
 export default function RootLayout({
   children,
@@ -7,12 +9,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className={`${inter.className} bg-[#151515] text-[#FAF9F6]`}>{children}</body>
     </html>
   )
 }
