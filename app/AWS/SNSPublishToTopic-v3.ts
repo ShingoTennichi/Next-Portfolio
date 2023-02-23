@@ -9,12 +9,6 @@ const snsClient: SNSClient = new SNSClient({
         identityPoolId: 'us-east-2:8f6af294-dd56-4b2f-877c-8fe8dc9e08ba'
     })
 });
-var params = {
-  Message: "MESSAGE_TEXT", // MESSAGE_TEXT
-  TopicArn: "arn:aws:sns:us-east-2:237600839617:ContactMe", //TOPIC_ARN
-};
-
-// console.log(snsClient);
 
 const PublishToTopic = async(params: PublishCommandInput): Promise<PublishCommandOutput | undefined>  => {
     try{
@@ -25,15 +19,5 @@ const PublishToTopic = async(params: PublishCommandInput): Promise<PublishComman
         // console.log('error', error);
     }
 };
-
-// const PublishToTopic = async (): Promise<PublishCommandOutput | undefined> => {
-//   try {
-//     const data = await snsClient.send(new PublishCommand(params));
-//     console.log("Success.",  data);
-//     return data; // For unit tests.
-//   } catch (err) {
-//     console.log("Error", err);
-//   }
-// };
 
 export default PublishToTopic;

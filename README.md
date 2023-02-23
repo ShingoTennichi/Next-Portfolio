@@ -10,3 +10,5 @@
   - AWS SNS(Simple Notification Service)
 - Hosting
   - Vercel
+
+![Next.js](https://raw.githubusercontent.com/imgwarehouse/portfolio/main/LOGO_NEXTJS.png)

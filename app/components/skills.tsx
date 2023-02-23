@@ -37,6 +37,7 @@ export default function Skills() {
           return (
             <div key={index.toString()}>
               <Image
+              className="pointer-events-none"
                 alt={logo}
                 src={urlPrefix + logo}
                 height={imageSize}

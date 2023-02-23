@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, Dispatch, SetStateAction } from "react";
 import { PublishCommandInput } from "@aws-sdk/client-sns";
 import PublishToTopic from "../AWS/SNSPublishToTopic-v3";
 
@@ -26,43 +26,6 @@ export default function Contact() {
       sent: false
     }
   });
-
-  const publishMessage = (): void => {
-    if(!input.name || !input.email || !input.message) {
-      setInput(prev => {
-        return {
-          ...prev,
-          status: {
-            name: input.name === "" ? "error" : "success",
-            email: input.email === "" ? "error" : "success",
-            message: input.message === "" ? "error" : "success",
-            sent: false
-          }
-        }
-      })
-      return;
-    }
-    const params: PublishCommandInput = {
-      TopicArn: process.env.NEXT_PUBLIC_TOPIC_ARN,
-      Subject: "Portfolio Contact Form",
-      Message:
-        "Name: " + input.name +
-        "\nEmail: " + input.email +
-        "\nMessage:\n" + input.message,
-    };
-    PublishToTopic(params);
-    setInput({
-      name: "",
-      email: "",
-      message: "",
-      status: {
-        name: "success",
-        email: "success",
-        message: "success",
-        sent: true
-      }
-    });
-  };
 
   function handleInput(
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
@@ -148,7 +111,7 @@ export default function Contact() {
       <button
         type="button"
         className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center bg-blue-800 rounded-lg hover:bg-blue-900 active:bg-gradient-to-r active:from-slate-200 active:to-sky-800"
-        onClick={() => publishMessage()}
+        onClick={() => publishMessage(input, setInput)}
       >
         SEND
       </button>
@@ -160,3 +123,40 @@ export default function Contact() {
     </form>
   );
 }
+
+function publishMessage (input: UserInput, setInput: Dispatch<SetStateAction<UserInput>> ): void  {
+  if(!input.name || !input.email || !input.message) {
+    setInput(prev => {
+      return {
+        ...prev,
+        status: {
+          name: input.name === "" ? "error" : "success",
+          email: input.email === "" ? "error" : "success",
+          message: input.message === "" ? "error" : "success",
+          sent: false
+        }
+      }
+    })
+    return;
+  }
+  const params: PublishCommandInput = {
+    TopicArn: process.env.NEXT_PUBLIC_TOPIC_ARN,
+    Subject: "Portfolio Contact Form",
+    Message:
+      "Name: " + input.name +
+      "\nEmail: " + input.email +
+      "\nMessage:\n" + input.message,
+  };
+  PublishToTopic(params);
+  setInput({
+    name: "",
+    email: "",
+    message: "",
+    status: {
+      name: "success",
+      email: "success",
+      message: "success",
+      sent: true
+    }
+  });
+};
