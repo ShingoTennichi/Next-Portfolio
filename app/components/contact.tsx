@@ -174,7 +174,7 @@ async function publishMessage(
 
   if (result.$metadata.httpStatusCode === 200) {
     status.sent = SUCCESS;
-    SETTER({ ...input, status });
+    SETTER({ name: "", email: "", message: "", status });
   } else {
     status.sent = ERROR;
     SETTER({ ...input, status });
