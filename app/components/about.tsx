@@ -6,7 +6,7 @@ export default function About() {
       {
         about.map((el, index) => {
           return(
-            <li key={index.toString()} className="md:max-w-2xl w-full list-none px-6 py-8 bg-[#201F22] m-auto">
+            <li key={index.toString()} className="md:max-w-2xl w-full list-none px-6 py-8 bg-[var(--black-light)] m-auto">
               <p className=' text-[10px] md:text-xs mb-2 md:mb-3 leading-[15px]'>{el.time}</p>
               {el.title.map((El, id)=> {
                 return(

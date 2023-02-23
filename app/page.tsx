@@ -44,11 +44,11 @@ export default function Home() {
         </div>
         <div>
           <section className="pb-4">
-            <h3 className=" mb-4 tracking-[4px] sticky top-0 bg-[#151515]">PROJECTS</h3>
+            <h3 className=" mb-4 tracking-[4px] sticky top-0 bg-[var(--black)]">PROJECTS</h3>
             <Projects />
           </section>
           <section className="pb-4">
-            <h3 className=" mb-4 tracking-[4px] sticky top-0 bg-[#151515]">ABOUT</h3>
+            <h3 className=" mb-4 tracking-[4px] sticky top-0 bg-[var(--black)]">ABOUT</h3>
             <About />
           </section>
           <section className="pb-4">

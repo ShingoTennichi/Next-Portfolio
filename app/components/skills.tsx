@@ -25,7 +25,7 @@ export default function Skills() {
     "LOGO_PYTHON.png",
     "LOGO_SWIFT.png",
   ];
-  const imageSize = 75;
+  const imageSize: number = 75;
   const gapSize: number = 40;
   const quality: number = 1;
   const size:number = (imageSize + gapSize) * logos.length * 2;
