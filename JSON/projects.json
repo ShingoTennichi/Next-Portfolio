@@ -7,7 +7,7 @@
   },
   {
     "title": "Next-Portfolio",
-    "technologies": ["TypeScript", "Next.js13", "Tailwind CSS", "AWS SNS"],
+    "technologies": ["TypeScript", "Next.js13", "Tailwind CSS", "AWS SNS", "Vercel"],
     "description": "Responsive design and excellent user experience portfolio",
     "url": "https://next-portfolio-tau-nine.vercel.app/"
   },
