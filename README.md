@@ -12,3 +12,4 @@
   - Vercel
 
 ![Next.js](https://raw.githubusercontent.com/imgwarehouse/portfolio/main/LOGO_NEXTJS.png=100x100)
+<img alt="Next.js" src="https://raw.githubusercontent.com/imgwarehouse/portfolio/main/LOGO_NEXTJS.png" width="100" />
