@@ -1,9 +1,12 @@
 # This is my portfolio project
-
+## https://next-portfolio-tau-nine.vercel.app/
 ## Technology
 
-- Next.js 13
-  - React Framework
-- Tailwind CSS
-- AWS API
-  - Simple Notification Service
+- Framework
+  - Next.js 13
+- CSS Framework
+  - Tailwind CSS
+- API
+  - AWS SNS(Simple Notification Service)
+- Hosting
+  - Vercel

@@ -1,11 +1,12 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import About from "./components/about";
 import Contact from "./components/contact";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   return (
@@ -30,16 +31,24 @@ export default function Home() {
             Hi! I am currently learning about Computer Science at Douglas
             College in Vancouver
           </p>
+          <div className="flex justify-evenly text-5xl pb-5">
+            <Link href={"https://github.com/ShingoTennichi"}>
+              <FontAwesomeIcon icon={faGithub}/>
+            </Link>
+            <Link href={"https://www.linkedin.com/in/shingo-tennichi-150693220/"}>
+              <FontAwesomeIcon icon={faLinkedin} />
+            </Link>
+          </div>
         </section>
 
         </div>
         <div>
           <section className="pb-4">
-            <h3 className=" mb-4 tracking-[4px]">PROJECTS</h3>
+            <h3 className=" mb-4 tracking-[4px] sticky top-0 bg-[#151515]">PROJECTS</h3>
             <Projects />
           </section>
           <section className="pb-4">
-            <h3 className=" mb-4 tracking-[4px]">ABOUT</h3>
+            <h3 className=" mb-4 tracking-[4px] sticky top-0 bg-[#151515]">ABOUT</h3>
             <About />
           </section>
           <section className="pb-4">
