@@ -11,4 +11,4 @@
 - Hosting
   - Vercel
 
-![Next.js](https://raw.githubusercontent.com/imgwarehouse/portfolio/main/LOGO_NEXTJS.png)
+![Next.js](https://raw.githubusercontent.com/imgwarehouse/portfolio/main/LOGO_NEXTJS.png = 100x100)
