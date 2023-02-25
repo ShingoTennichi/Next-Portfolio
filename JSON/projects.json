@@ -21,7 +21,7 @@
     "title": "Currency Exchange Notifier",
     "technologies": ["JavaScript", "AWS Lambda, SNS, EventBridge", "Currency DATA API"],
     "description": "Automated currency notification application for $CAD to ¥JPY",
-    "url": "/"
+    "url": "https://github.com/ShingoTennichi/Currency-Exchange-Notifier"
   },
   {
     "title": "Next-Word-Counter",
