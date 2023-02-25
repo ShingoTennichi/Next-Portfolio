@@ -18,6 +18,18 @@
     "url": "/"
   },
   {
+    "title": "Currency Exchange Notifier",
+    "technologies": ["Javascript", "AWS Lambda, SNS, EventBridge", "Currency DATA API"],
+    "description": "Automated currency notification application for $CAD to ¥JPY",
+    "url": "/"
+  },
+  {
+    "title": "Next-Word-Counter",
+    "technologies": ["TypeScript", "Next.js", "Dictionary API"],
+    "description": "Word counting application with searching meanings and synonyms function",
+    "url": "https://word-counter-chi.vercel.app/"
+  },
+  {
     "title": "Prisma-CockroachDB",
     "technologies": ["TypeScript", "Next.js13", "Prisma", "CockroachDB"],
     "description": "Simple CRUD function web application",
