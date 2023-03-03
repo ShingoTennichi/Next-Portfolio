@@ -1,7 +1,7 @@
 [
   {
     "time": "2022.09 - Current",
-    "title": ["Douglas College / Computer Science PPD"],
+    "title": ["Douglas College / Computer Science PBD"],
     "licenses": [""]
   },
   {
@@ -11,7 +11,10 @@
   },
   {
     "time": "2021 - 2022",
-    "title": ["VanWest College-Communication English", "VGC International College-Advance English"],
+    "title": [
+      "VanWest College-Communication English",
+      "VGC International College-Advance English"
+    ],
     "licenses": [""]
   },
   {
@@ -27,6 +30,10 @@
   {
     "time": "2013 - 2017",
     "title": ["Ashiya University / Bachelor of Education"],
-    "licenses": ["- Japan Secondary School Teaching License", "- Japan Primary School Teaching License", "- Varsity Basket Ball Player"]
+    "licenses": [
+      "- Japan Secondary School Teaching License",
+      "- Japan Primary School Teaching License",
+      "- Varsity Basket Ball Player"
+    ]
   }
 ]
