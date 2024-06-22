@@ -1,0 +1,230 @@
+@use "../utils/colors" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    filter: drop-shadow(0 2px 8px #ffffff);
+    transition: 1s;
+    animation: title 2.5s ease-in-out;
+  }
+
+  @keyframes title {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: sepia(1000%) saturate(1000%) hue-rotate(-20deg) brightness(50%)
+    blur(4px);
+  z-index: -1;
+}
+
+.slider {
+  overflow: hidden;
+  padding: 1.5rem;
+  background: hsl(40, 100%, 50%);
+  background: linear-gradient(
+    135deg,
+    hsl(40, 100%, 50%) 0%,
+    hsl(0, 0%, 0%) 100%
+  );
+
+  &__inner {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(38, 1fr);
+    gap: 40px;
+    animation: slider 10s linear infinite;
+  }
+
+  @keyframes slider {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-2185px);
+    }
+  }
+}
+
+.moving-img-bg__container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  filter: brightness(0.2);
+}
+
+.moving-img-bg__image {
+  position: absolute;
+  object-fit: cover;
+  object-position: 50% 50%; // +-10% depending on mouse position
+}
+
+.projects {
+  width: 100%;
+  height: 300px;
+  display: grid;
+  place-items: center;
+
+  .link {
+    position: relative;
+    padding: 1rem;
+
+    &--text {
+      font-size: 2.25rem;
+      font-size: clamp(2.25rem, 2.0357142857142856rem + 1.0714285714285714vw, 3rem);
+      transition: 0.3s;
+      
+      &:hover {
+        color: $orange-500;
+        animation: bg-flash 1s ease-in-out infinite;
+
+        @keyframes bg-flash {
+          0% {
+            background-color: inherit;
+          }
+          50% {
+            background-color: $orange-300;
+          }
+          100% {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+    span {
+      z-index: -1;
+      &.border-animation-h-top  {
+        position: absolute;
+        top: 0;
+        animation: border-l-to-r 10s linear infinite;
+        border-top: 1px solid $orange-500;
+
+        @keyframes border-l-to-r {
+          0% {
+            width: 0%;
+            left: 0%;
+          }
+          25% {
+            width: 100%;
+            left: 0%;
+          }
+          50% {
+            width: 0%;
+            left: 100%;
+          }
+          75% {
+            width: 100%;
+            left: 0%;
+          }
+          100% {
+            width: 0%;
+            left: 0%;
+          }
+        }
+      }
+      &.border-animation-h-bottom {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        animation: border-r-to-l 10s linear infinite;
+        border-bottom: 1px solid $orange-500;
+        @keyframes border-r-to-l {
+          0% {
+            left: 100%;
+            width: 0%;
+          }
+          25% {
+            left: 0%;
+            width: 100%;
+          }
+          50% {
+            left: 0%;
+            width: 0%;
+          }
+          75% {
+            left: 0%;
+            width: 100%;
+          }
+          100% {
+            left: 100%;
+            width: 0%;
+          }
+        }
+      }
+      &.border-animation-v-l {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: border-top-to-bottom-l 10s linear infinite;
+        border-left: 1px solid $orange-500;
+  
+        @keyframes border-top-to-bottom-l {
+          0% {
+            bottom: 0%;
+          }
+          25% {
+            bottom: 100%;
+          }
+          75% {
+            bottom: 100%;
+          }
+          100% {
+            bottom: 0%;
+          }
+        }
+      }
+      &.border-animation-v-r {
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: border-top-to-bottom-r 10s linear infinite;
+        border-left: 1px solid $orange-500;
+  
+        @keyframes border-top-to-bottom-r {
+          0% {
+            bottom: 0%;
+          }
+          25% {
+            top: 100%;
+          }
+          75% {
+            top: 100%;
+          }
+          100% {
+            top: 0%;
+            bottom: 0%;
+          }
+        }
+      }
+    }
+
+  }
+}

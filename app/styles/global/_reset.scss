@@ -1,0 +1,70 @@
+@use "../utils/colors" as *;
+
+:root {
+  --default-deg: rotateY(0) rotateX(0);
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $black-950;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li,
+button,
+span,
+label,
+th,
+td {
+  font-family: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  &:focus {
+    outline: none;
+  }
+}

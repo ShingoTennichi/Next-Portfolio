@@ -1,0 +1,8 @@
+@use "../utils/colors" as *;
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  border-top: solid $white 1px;
+}
