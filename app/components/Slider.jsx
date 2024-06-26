@@ -1,29 +1,33 @@
 import Image from "next/image";
 
-const URL_PREFIX = "https://raw.githubusercontent.com/imgwarehouse/portfolio/main/";
+const URL_PREFIX = "https://raw.githubusercontent.com/imgwarehouse/storage/main/images/logos/";
 const LOGOS = [
   "LOGO_JS.png",
   "LOGO_TYPESCRIPT.png",
-  "LOGO_REACT.png",
-  "LOGO_NEXTJS.png",
-  "LGO_REDUX.png",
-  "LOGO_PRISMA.jpeg",
-  "LOGO_MONGODB2.png",
-  "LOGO_COCKROACH_LABS.png",
+  "LOGO_JAVA.png",
+  "LOGO_PYTHON.png",
+  "LOGO_NODEJS.png",
   "LOGO_HTML5.png",
   "LOGO_CSS3.png",
-  "LOGO_NODEJS.png",
+  "LOGO_REACT.png",
+  "LOGO_NEXTJS.png",
+  "LOGO_REDUX.png",
+  "LOGO_PRISMA.jpeg",
+  "LOGO_MONGO-DB-2.png",
+  "LOGO_COCKROACH-LABS.png",
+  "LOGO_POSTGRESQL.png",
+  "LOGO_MYSQL.png",
+  "LOGO_SASS.png",
+  "LOGO_TAILWIND-CSS.png",
+  "LOGO_BOOTSTRAP.png",
   "LOGO_AWS.jpeg",
   "LOGO_AWS-LAMBDA.png",
   "LOGO_AWS-SNS.png",
   "LOGO_AWS-EVENT-BRIDGE.jpeg",
   "LOGO_VSCODE.png",
-  "LOGO_GITHUB.png",
-  "LOGO_JAVA.png",
-  "LOGO_PYTHON.png"
+  "LOGO_GITHUB.png"
 ];
-// "LOGO_C-SHARP.png",
-// "LOGO_SWIFT.png",
+
 const IMAGE_SIZE = 75;
 const QUALITY = 1;
 
