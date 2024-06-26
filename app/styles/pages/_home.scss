@@ -3,7 +3,7 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,9 +17,19 @@
     text-align: center;
     display: grid;
     place-items: center;
-    filter: drop-shadow(0 2px 8px #ffffff);
+    filter: drop-shadow(3px 3px 3px #ffffff);
+    perspective: 500px;
     transition: 1s;
     animation: title 2.5s ease-in-out;
+
+    &--move {
+      transition: 0.1s all;
+      filter: var(--default-filter);
+    }
+
+    &--base-size {
+      font-size: inherit;
+    }
   }
 
   @keyframes title {
@@ -45,6 +55,12 @@
   z-index: -1;
 }
 
+.test {
+  filter: sepia(1000%) saturate(1000%) hue-rotate(-20deg) brightness(50%)
+    blur(4px);
+}
+
+
 .slider {
   overflow: hidden;
   padding: 1.5rem;
@@ -58,9 +74,9 @@
   &__inner {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(38, 1fr);
+    grid-template-columns: repeat(48, 1fr);
     gap: 40px;
-    animation: slider 10s linear infinite;
+    animation: slider 20s linear infinite;
   }
 
   @keyframes slider {
@@ -68,7 +84,7 @@
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(-2185px);
+      transform: translateX(-2760px);
     }
   }
 }
@@ -99,9 +115,13 @@
 
     &--text {
       font-size: 2.25rem;
-      font-size: clamp(2.25rem, 2.0357142857142856rem + 1.0714285714285714vw, 3rem);
+      font-size: clamp(
+        2.25rem,
+        2.0357142857142856rem + 1.0714285714285714vw,
+        3rem
+      );
       transition: 0.3s;
-      
+
       &:hover {
         color: $orange-500;
         animation: bg-flash 1s ease-in-out infinite;
@@ -121,7 +141,7 @@
     }
     span {
       z-index: -1;
-      &.border-animation-h-top  {
+      &.border-animation-h-top {
         position: absolute;
         top: 0;
         animation: border-l-to-r 10s linear infinite;
@@ -185,7 +205,7 @@
         left: 0;
         animation: border-top-to-bottom-l 10s linear infinite;
         border-left: 1px solid $orange-500;
-  
+
         @keyframes border-top-to-bottom-l {
           0% {
             bottom: 0%;
@@ -207,7 +227,7 @@
         right: 0;
         animation: border-top-to-bottom-r 10s linear infinite;
         border-left: 1px solid $orange-500;
-  
+
         @keyframes border-top-to-bottom-r {
           0% {
             bottom: 0%;
@@ -225,6 +245,5 @@
         }
       }
     }
-
   }
 }

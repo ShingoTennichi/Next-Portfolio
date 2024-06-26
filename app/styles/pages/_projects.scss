@@ -1,0 +1,85 @@
+@use "../utils/colors" as *;
+
+.overflow-hidden {
+  overflow-x: hidden;
+}
+
+.projects {
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.card {
+
+  width: 100%;
+  border-top: 1px solid $orange-500;
+  border-bottom: 1px solid $orange-500;
+  margin-bottom: 2rem;
+  background-color: $blue-800;
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    // border-bottom: 1px solid $orange-500;
+  }
+
+  &__preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.8s all;
+    z-index: 999;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    &__video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__overlay--hidden {
+    display: none;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  &__content__title {
+  }
+}
+
+.project-search-bar {
+  .form {
+    display: flex;
+    flex-direction: column;
+    background-color: $blue-500;
+    padding: 1rem;
+
+    &__group {
+      display: flex;
+      gap: 1rem;
+
+      &--space-between {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .search-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

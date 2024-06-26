@@ -1,0 +1,14 @@
+.hidden {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.intersecting {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: 0.8s all;
+}
+
+.inherit-parent-width {
+  width: 100%;
+}

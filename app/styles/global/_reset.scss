@@ -2,6 +2,7 @@
 
 :root {
   --default-deg: rotateY(0) rotateX(0);
+  --default-filter: drop-shadow(3px 3px 0px #3d3d3d);
 }
 
 *,
@@ -31,7 +32,6 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
 }
 
 a {
