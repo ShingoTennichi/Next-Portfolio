@@ -1,8 +1,14 @@
 @use "../utils/colors" as *;
 
-footer {
-  display: flex;
-  justify-content: center;
-  padding: 24px;
-  border-top: solid $white 1px;
+.footer {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  padding: 2rem;
+
+  .links {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
 }
