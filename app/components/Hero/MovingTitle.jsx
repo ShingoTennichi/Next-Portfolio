@@ -2,47 +2,43 @@
 
 import { useEffect, useRef } from "react";
 
+const MAX_X_DEG = 50;
+const MAX_Y_DEG = 50;
+const SHADOW_COEF = -8
+
 export default function MovingTitle({ children }) {
   const ref = useRef(null);
   useEffect(() => {
     ref.current.addEventListener('pointermove', (e) => {
-      const [x, y] = calcDeg(e, ref);
-      let X, Y, X2, Y2;
-      X = calcPosition(x, 40);
-      Y = calcPosition(y, 40);
-      X2 = calcPosition(x, 5);
-      Y2 = calcPosition(y, 5);
-      ref.current.style.transform = `rotateY(${X}deg) rotateX(${Y}deg)`;
-      ref.current.style.filter = `drop-shadow(${X2}px ${Y2}px 0px #888888)`;
+      const [xRatio, yRatio] = calcRatio(e, ref);
+      const yRotate = MAX_Y_DEG * xRatio;
+      const xRotate = MAX_X_DEG * yRatio * -1; // -1 for reversing
+      const shadowX = SHADOW_COEF * xRatio;
+      const shadowY = SHADOW_COEF * yRatio;
+      ref.current.firstChild.style.transform = `rotateY(${yRotate}deg) rotateX(${xRotate}deg)`;
+      ref.current.firstChild.style.filter = `drop-shadow(${shadowX}px ${shadowY}px 0px #3d3d3d)`;
     })
 
     ref.current.addEventListener('mouseleave', () => {
-      ref.current.style.transform = 'var(--default-deg)';
-      ref.current.style.filter = 'drop-shadow(0 2px 8px #ffffff)';
+      ref.current.firstChild.style.transform = 'var(--default-deg)';
+      ref.current.firstChild.style.filter = 'var(--default-filter)';
     })
   }, [])
   return (
     <div ref={ref} className="hero__title">
-      {children}
+      <div className="hero__title--move">
+        {children}
+      </div>
     </div>
   )
 }
 
-function calcDeg(e, ref) {
-  const { clientX, clientY } = e;
+function calcRatio(e, ref) {
   const { left, top, width, height } = ref.current.getBoundingClientRect();
   const x = left + width / 2;
   const y = top + height / 2;
-  const dx = clientX - x;
-  const dy = clientY - y;
-
-  return [dx, dy];
-}
-
-function calcPosition(axis, max) {
-  if (axis >= 0) {
-    return axis < max ? axis * -1 : max * -1;
-  } else {
-    return axis > max * -1 ? axis * -1 : max;
-  }
+  const { clientX, clientY } = e;
+  const xRatio = (clientX - x) / x;
+  const yRatio = (clientY - y) / (y - top);
+  return [xRatio, yRatio];
 }
