@@ -53,6 +53,7 @@
   filter: sepia(1000%) saturate(1000%) hue-rotate(-20deg) brightness(50%)
     blur(4px);
   z-index: -1;
+  pointer-events: none;
 }
 
 .test {
