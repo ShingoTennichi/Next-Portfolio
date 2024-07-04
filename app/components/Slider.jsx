@@ -47,7 +47,7 @@ function displayLogos() {
     return (
       <div key={index.toString()}>
         <Image
-          className="pointer-events-none"
+          className="slider__pointer-events"
           alt={logo}
           src={URL_PREFIX + logo}
           height={IMAGE_SIZE}

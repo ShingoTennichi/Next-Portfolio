@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Bringing Ken Trading to North America",
+    "technologies": ["TypeScript", "React.js", "AWS SNS", "Google Analytics"],
+    "description": "Designed and developed a website for Ken Trading's North American expansion",
+    "websiteUrl": "https://www.kentrading.biz/",
+    "imgUrl": "/ken-trading.png",
+    "previewUrl": "/ken-trading-preview.mp4",
+    "githubUrl": "",
+    "category": "Web Development",
+    "date": "2022-06-01"
+  },
+  {
+    "title": "Currency Notifier",
+    "technologies": [
+      "JavaScript",
+      "AWS Lambda",
+      "AWS SNS",
+      "AWS EventBridge",
+      "Currency DATA API"
+    ],
+    "description": "Automated FX Notification: CAD to JPY",
+    "websiteUrl": "",
+    "imgUrl": "/currency-notifier.png",
+    "previewUrl": "/currency-notifier-preview.mp4",
+    "githubUrl": "https://github.com/ShingoTennichi/Currency-Exchange-Notifier",
+    "category": "Web Development",
+    "date": "2022-06-01"
+  },
+  {
+    "title": "Word Counter",
+    "technologies": ["TypeScript", "Next.js", "Google Dictionary API"],
+    "description": "Word Counting App with integrated dictionary and thesaurus",
+    "websiteUrl": "https://word-counter-chi.vercel.app/",
+    "imgUrl": "/word-counter.png",
+    "previewUrl": "/word-counter-preview.mp4",
+    "githubUrl": "https://github.com/ShingoTennichi/Word-Counter",
+    "category": "Web Development",
+    "date": "2022-06-01"
+  },
+  {
+    "title": "User Registration",
+    "technologies": ["TypeScript", "Next.js13", "Prisma", "CockroachDB"],
+    "description": "Interactive Web App: Create, Read, Update, and Delete Data",
+    "websiteUrl": "https://user-registration-ver1.vercel.app/",
+    "imgUrl": "/user-registration.png",
+    "previewUrl": "/user-registration-preview.mp4",
+    "githubUrl": "https://github.com/ShingoTennichi/user-registration",
+    "category": "Web Development",
+    "date": "2022-06-01"
+  },
+  {
+    "title": "Alarm Clock with Email Notification",
+    "technologies": ["TypeScript", "React.js", "AWS SNS"],
+    "description": "Notification for managing time to take medicines",
+    "websiteUrl": "",
+    "imgUrl": "/alarm-clock.png",
+    "previewUrl": "",
+    "githubUrl": "https://github.com/ShingoTennichi/alarm-clock",
+    "category": "Web Development",
+    "date": "2022-06-01"
+  }
+]

@@ -71,6 +71,10 @@
     hsl(0, 0%, 0%) 100%
   );
 
+  &__pointer-events {
+    pointer-events: none;
+  }
+
   &__inner {
     display: grid;
     grid-template-rows: 1fr;

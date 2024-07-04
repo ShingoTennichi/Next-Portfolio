@@ -2,7 +2,7 @@
 export default function ProjectSearchBar() {
   return (
     <div className="project-search-bar">
-      <form className="form" action="">
+      {/* <form className="form" action="">
         <div className="form__group">
           <div>
             <label htmlFor="search">Search</label>
@@ -60,7 +60,7 @@ export default function ProjectSearchBar() {
           </div>
 
         </div>
-      </form>
+      </form> */}
     </div>
   )
 }
