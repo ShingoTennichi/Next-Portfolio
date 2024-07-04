@@ -4,19 +4,22 @@ import { useRef, useEffect } from "react";
 export default function CardImage({ children, previewUrl = '' }) {
   const ref = useRef();
   useEffect(() => {
-    ref.current.addEventListener('mouseenter', () => {
-      ref.current.firstChild.classList.remove('card__preview--hidden');
-      if (previewUrl !== '') {
-        ref.current.firstChild.firstChild.play();
-      }
-    })
-    ref.current.addEventListener('mouseleave', () => {
-      ref.current.firstChild.classList.add('card__preview--hidden');
-      if (previewUrl !== '') {
-        ref.current.firstChild.firstChild.pause();
-        ref.current.firstChild.firstChild.currentTime = 0;
-      }
-    })
+    const isMobile = window.innerWidth < 760;
+    if (!isMobile) {
+      ref.current.addEventListener('mouseenter', () => {
+        ref.current.firstChild.classList.remove('card__preview--hidden');
+        if (previewUrl !== '') {
+          ref.current.firstChild.firstChild.play();
+        }
+      })
+      ref.current.addEventListener('mouseleave', () => {
+        ref.current.firstChild.classList.add('card__preview--hidden');
+        if (previewUrl !== '') {
+          ref.current.firstChild.firstChild.pause();
+          ref.current.firstChild.firstChild.currentTime = 0;
+        }
+      })
+    }
   }, []);
 
   return (
