@@ -9,7 +9,7 @@ export default function HeroBgVideo({videoUrl}) {
   }, []);
 
   return (
-    <video ref={ref} className="hero__bg" autoPlay muted loop>
+    <video ref={ref} className="hero__bg" autoPlay muted loop playsInline>
       <source src={videoUrl} type="video/mp4" />
     </video>
   )
