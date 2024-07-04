@@ -9,20 +9,23 @@ const SHADOW_COEF = -8
 export default function MovingTitle({ children }) {
   const ref = useRef(null);
   useEffect(() => {
-    ref.current.addEventListener('pointermove', (e) => {
-      const [xRatio, yRatio] = calcRatio(e, ref);
-      const yRotate = MAX_Y_DEG * xRatio;
-      const xRotate = MAX_X_DEG * yRatio * -1; // -1 for reversing
-      const shadowX = SHADOW_COEF * xRatio;
-      const shadowY = SHADOW_COEF * yRatio;
-      ref.current.firstChild.style.transform = `rotateY(${yRotate}deg) rotateX(${xRotate}deg)`;
-      ref.current.firstChild.style.filter = `drop-shadow(${shadowX}px ${shadowY}px 0px #3d3d3d)`;
-    })
+    const isMobile = navigator.userAgentData.mobile ?? true;
+    if (!isMobile) {
+      ref.current.addEventListener('pointermove', (e) => {
+        const [xRatio, yRatio] = calcRatio(e, ref);
+        const yRotate = MAX_Y_DEG * xRatio;
+        const xRotate = MAX_X_DEG * yRatio * -1; // -1 for reversing
+        const shadowX = SHADOW_COEF * xRatio;
+        const shadowY = SHADOW_COEF * yRatio;
+        ref.current.firstChild.style.transform = `rotateY(${yRotate}deg) rotateX(${xRotate}deg)`;
+        ref.current.firstChild.style.filter = `drop-shadow(${shadowX}px ${shadowY}px 0px #3d3d3d)`;
+      })
 
-    ref.current.addEventListener('mouseleave', () => {
-      ref.current.firstChild.style.transform = 'var(--default-deg)';
-      ref.current.firstChild.style.filter = 'var(--default-filter)';
-    })
+      ref.current.addEventListener('mouseleave', () => {
+        ref.current.firstChild.style.transform = 'var(--default-deg)';
+        ref.current.firstChild.style.filter = 'var(--default-filter)';
+      })
+    }
     // if (!navigator.userAgentData.mobile) {
     // }
   }, [])
