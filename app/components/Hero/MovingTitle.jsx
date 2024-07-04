@@ -9,7 +9,8 @@ const SHADOW_COEF = -8
 export default function MovingTitle({ children }) {
   const ref = useRef(null);
   useEffect(() => {
-    if (!window.navigator.userAgentData.mobile) {
+    const isMobile = window.innerWidth < 760;
+    if (!isMobile) {
       ref.current.addEventListener('pointermove', (e) => {
         const [xRatio, yRatio] = calcRatio(e, ref);
         const yRotate = MAX_Y_DEG * xRatio;
